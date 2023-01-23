@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Регистрация</title>
+  <link href="{% static '/Online_rezume/css/Sign_up.css'%}" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="back">
+    <div class="base">
+      <div class="block-round">
+        <nav>
+          <h1 id="title">Онлайн-резюме</h1>
+        </nav>
+      </div>
+
+
+      <div class="container">
+        <h2>Регистрация</h2>
+        <p><b>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</b></p>
+        <hr class="form">
+        <form class="signup" action="" method="POST">
+          {% csrf_token %}
+          <b><label for="username">Email:</label></b>
+          {{ form.username }}
+          <b><label for="password1">Пароль:</label></b>
+          {{ form.password1 }}
+          <b><label for="password2">Повторите пароль:</label></b>
+          {{ form.password2 }}
+
+          <div class="privacy">
+            <p>Нажимая кнопку "Зарегистрироваться", вы соглашаетесь <br> с нашей <a href="/privacy"
+                target="_blank">Политикой конфиденциальности</a>.</p>
+
+          </div>
+          <button type="submit" class="registerbtn"><b>Зарегистрироваться</b></button>
+        </form>
+
+        <p id="voprosik"><b>У вас уже есть аккаунт? </b><a href="/sign_in"><b>Войти</b></a></p>
+      </div>
+      <div id="copback">
+        <p id="copyright"><b>2022-2023 © Easy-Resume</b></p>
+      </div>
+    </div>
+    <div id="mypopup">
+      {% for error in form.errors %}
+      <script async src="../static/Online_rezume/JS/Sign_up.js"></script>
+
+
+      <div class="modal">
+        <div class="modal-header">
+
+        </div>
+        <div class="modal-content">
+
+          <a href=""><span class="close-btn">&times;</span></a>
+          <b>
+            <h1>❌Проверьте правильность введённых данных❌</h1>
+            <p>Логин: Не более 30 символов. Только буквы, цифры и @/./+/-/_.</p>
+            <p>Пароль: Это значение может содержать только буквы, цифры и символы @/./+/-/_.</p>
+            <p>Повторный пароль: должен совпадать с указанным выше.</p>
+          </b>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+
+  </div>
+</body>
+
+</html>

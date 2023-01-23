@@ -1,0 +1,17 @@
+:root{
+    --main-color: rgba(13, 99, 243, 1)
+    }
+.block-round{
+    font-family: 'Inter', sans-serif;
+    background-color: var(--main-color);
+    position: absolute;
+    width: 100%;
+    height: 74px;
+    left: 0px;
+    top: 0px;
+    border-radius: 15px 15px 180px 180px;
+    }
+#title{
+    text-align: center;
+    color: white;
+    }

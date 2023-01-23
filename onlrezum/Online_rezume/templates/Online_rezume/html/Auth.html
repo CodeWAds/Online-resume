@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+    <link href="{% static 'Online_rezume/css/Auth.css'%}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+  </head>
+<body>
+
+  <div class="back">
+    <div class="base">
+    <div  class="block-round">
+        <nav>
+            <h1 id="title">Онлайн-резюме</h2>
+        </nav>
+    </div>
+<form class="auth" action="" method="POST">
+  {% csrf_token %}  
+  <div class="container">
+    <h2>Вход</h2>
+    <p><b>Пожалуйста, введите данные для входа.</b></p>
+    <hr class="form">
+    <b><label for="username">Email:</label></b>
+    {{ form.username }}
+    <b><label for="password">Пароль:</label></b>
+    {{ form.password }}
+    <button type="submit" class="registerbtn"><b>Войти</b></button>
+  </form>
+  
+    <p id="voprosik"><b>У вас нет аккаунта?</b><a href="/"><b>Зарегистрироваться</a></b></p>
+  </div>
+<div id="copback">
+  <p id="copyright"><b>2022-2023 © Easy-Resume</b></p>
+ </div>
+</div>
+<div>
+  <div id="mypopup">
+    {% for a in sign_in %}
+    <script async src="../static/Online_rezume/JS/Sign_up.js"></script>
+    
+    
+    <div class="modal">
+      <div class="modal-header">
+        
+      </div>
+      <div class="modal-content">
+        
+        <a href=""><span class="close-btn">&times;</span></a>
+      <b>
+        <h1>❌Проверьте правильность введённых данных❌</h1>
+        <p>Логин: Не более 30 символов. Только буквы, цифры и @/./+/-/_.</p>
+        <p>Пароль: Это значение может содержать только буквы, цифры и символы @/./+/-/_.</p>
+        <p>Повторный пароль: должен совпадать с указанным выше.</p>
+      </b>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+</div>
+</body>
+</html>
