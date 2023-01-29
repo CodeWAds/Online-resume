@@ -18,7 +18,7 @@ class UserRegistrationForm(UserCreationForm):
         fields = ['username', 'password1', 'password2']
     
 
-class LoginUserForm(AuthenticationForm):
+class LoginUserForm(forms.Form):
     username = forms.CharField(widget= forms.TextInput
                            (attrs={'placeholder':'Введите ваш Email'}))
     password1 = forms.CharField(widget=forms.PasswordInput
