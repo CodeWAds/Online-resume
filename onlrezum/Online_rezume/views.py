@@ -13,18 +13,16 @@ def sign_in(request):
     if request.method == 'POST':
         form = LoginUserForm(request.POST)
         if form.is_valid():
-            cd = form.cleaned_data
-            user = authenticate(username=cd['username'], password=cd['password1'])
-            a = form.is_valid()
+            user = authenticate(
+                username = form.cleaned_data['username'],
+                password = form.cleaned_data['password']
+            )
             if user is not None:
-                if user.is_active:
-                    login(request, user)
-                    return redirect('/pers_area')
-                else:
-                    return redirect('/sign_in', a) 
+                login(request,user)
+                return redirect('/pers_area')
             else:
-                return redirect("/sign_in", a)
-        
+                form.add_error(None, 'Invalid username or password')
+                return redirect('/sign_in')       
           
     else:
             form = LoginUserForm()
