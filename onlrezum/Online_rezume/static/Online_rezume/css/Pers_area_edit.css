@@ -1,0 +1,24 @@
+.back {
+      /* Добавим пару радиальных градиентов */
+  background:
+  radial-gradient(ellipse at 40% 40%, red, transparent),
+  radial-gradient(ellipse at 60% 60%, blue, transparent);
+/* И смешаем их с помощью бленда мода */
+background-blend-mode: screen;
+
+margin-left: 0px;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+height : 100vh;
+
+}
+.main{
+    margin-left: auto;
+    margin-right: auto;
+    width:75%;
+    height : 100vh;
+    background: white;
+    border-radius: 50px 50px 50px 50px;
+    margin-top:50px;
+}
