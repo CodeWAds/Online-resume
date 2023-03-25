@@ -14,6 +14,7 @@ height : 100vh;
 
 }
 .main{
+    border:1px solid red;
     margin-left: auto;
     margin-right: auto;
     width:75%;
@@ -21,4 +22,56 @@ height : 100vh;
     background: white;
     border-radius: 50px 50px 50px 50px;
     margin-top:50px;
+    box-shadow: 1px 1px 12px 12px rgba(0, 0, 255, .2);
+    font-family: 'Inter', sans-serif;
 }
+.head{
+    border:1px solid red;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.first{
+    border:1px solid red;
+    height: 100%;
+    max-width: 21%;
+}
+.photo{
+    border:1px solid red;
+    width: 200px;
+    height: 200px;
+    background: url("../img/camera.svg") no-repeat center;
+    
+}
+label{border:1px solid red;
+    display: block;
+    margin: 0px auto;
+    padding-bottom: 159px;
+    text-align: center;
+    cursor: pointer;
+    }
+#add_photo {border:1px solid red;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    background: url("../img/camera.svg") no-repeat center;
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+}
+::placeholder {
+    font-family: 'Inter', sans-serif;
+    
+  }
+
+input{border-radius: 15px 15px 15px 15px;
+margin-top: 5px;
+margin-bottom: 5px;}
+.form{
+    border:1px solid red ;
+    padding-top:0;
+    padding-bottom: 0;
+}
+h2{border:1px solid red ;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;}

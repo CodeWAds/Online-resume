@@ -86,7 +86,9 @@ h2 {
 .registerbtn:hover {
   opacity:1;
 }
-
+input {
+  border-radius: 20px 20px 20px 20px;
+}
 /* Add a blue text color to links */
 a {
   color: dodgerblue;

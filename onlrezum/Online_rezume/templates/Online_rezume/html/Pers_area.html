@@ -14,9 +14,33 @@
 <body class="back">
 
     
-    <div  class="main">
+    <div class="main">
+        <div class="head">
+            <h1>РЕЗЮМЕ</h1>
+        </div>
+
+        <div class="first">
+            <div class="photo">
+                <form action="" method="post">
+                {% csrf_token %}
+                     <label for="add_photo">Нажмите сюда, чтобы добавить фото</label>
+                     <input id="add_photo" type="file" style="visibility:hidden; "name="photocka" src="{% static 'Online_rezume/img/camera.svg'%}" title="Нажмите сюда, чтобы добавить фото" accept="image/*">
+               </form>
+            </div>
+            <div class="form">
+               <form action="" method="post">
+                <img src="{% static 'Online_rezume/img/house.svg'%}">
+                <input name="city" placeholder="Введите город" required="required">
+                <img src="{% static 'Online_rezume/img/person.svg'%}">
+                <input name="old" placeholder="Укажите возраст" required="required">
+               </form>
+            </div>
+            <div class="form">
+                <h2>Навыки</h2>
+                <input name="skill" placeholder="Язык программирования/Категория водительских прав..." type="text" required="required">
+            </div>
+        </div>
         
     </div>
-</div>
 </body>
 </html>
