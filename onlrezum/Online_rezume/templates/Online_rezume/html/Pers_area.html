@@ -23,8 +23,13 @@ function addForm() {
   var input1 = document.createElement("input");
   input1.type = "text";
   input1.name = "skill_add";
+  input1.className = 'ed';
   input1.placeholder = "Язык программирования/Коммуникабельность/Ответственность...";
   form.appendChild(input1);
+  var pol1 = document.createElement("input");
+  pol1.type = "range";
+  pol1.className = 'slider';
+  form.appendChild(pol1);
   // Добавляем кнопку "Отмена"
 
   var cancelButtonS = document.createElement("img");
@@ -40,11 +45,17 @@ function addForm() {
 function addLang() {
   var form = document.createElement("form");
   // Добавляем поля формы
+
   var input2 = document.createElement("input");
   input2.type = "text";
   input2.name = "lang_add";
+  input2.className = 'ed';
   input2.placeholder = "Введите название языка";
   form.appendChild(input2);
+  var pol = document.createElement("input");
+  pol.type = "range";
+  pol.className = 'slider';
+  form.appendChild(pol);
   // Добавляем кнопку "Отмена"
   var cancelButtonL = document.createElement("img");
   cancelButtonL.src = "{% static 'Online_rezume/img/minus.svg'%}";
@@ -121,12 +132,14 @@ function addEdu() {
             </div>
             <div class="form">
                 <h2>НАВЫКИ</h2>
-                <p id="wrap">*добавьте навык(и) соответствующий(е) желаемой должности</p>
+                <p id="wrap">1) добавьте навык(и) соответствующий(е) желаемой должности</p>
                 <form action="" method="post">
                 <img class="znachok" src="{% static 'Online_rezume/img/list-stars.svg'%}">
                 <input name="skill" title="Например, языки программирования/категория водительских прав/лидерство/коммуникабельность и т.д." placeholder="Язык программирования/Коммуникабельность/Ответственность..." type="text" required="required">
+                <p>2) уровень компетентности</p>
+                <input type="range" min="1" max="100" value="50" class="slider" id="range_first" required > 
                 </form>
-                 
+                </form>
                 <button id="add_skill" hidden onclick="addForm()">Добавить форму</button>
                 <div id="skill-container"></div>
                 <label class="plusik" for="add_skill" title="Нажмите, чтобы добавить ещё одно поле"></label>  
@@ -135,10 +148,12 @@ function addEdu() {
              <div class="form">
                 
                 <h2>ИНОСТРАННЫЕ ЯЗЫКИ</h2>
-                <p>*укажите иностранный язык(и), если Вы им(и) владеете</p>
+                <p>1) укажите иностранный язык(и), если Вы им(и) владеете</p>
                 <form action="" method="post">
                 <img class="znachok" src="{% static 'Online_rezume/img/translate.svg'%}">
                 <input name="lang" title="Например, английский/немецкий/испанский/итальянский и т.д." placeholder="Введите название языка" type="text">
+                <p>2) уровень владения</p>
+                <input type="range" min="1" max="100" value="50" class="slider" id="range_second"  id="myRange"> 
                 </form>
                 
                 <button id="add_lang" hidden  title="Нажмите, чтобы добавить ещё одно поле" onclick="addLang()"></button>
@@ -151,10 +166,10 @@ function addEdu() {
         <div class="second">
             <div class="form">
                 <form action="" method="post">
-                <input name="surname" title="Ваша фамилия" placeholder="Введите фамилию" type="text" required>
-                <input name="name" title="Ваше имя" placeholder="Введите имя" type="text" required>
-                <input name="otchevstvo" title="Ваше отчество" placeholder="Введите отчество" type="text">
-                <input name="zhelaemaya_dolzhnost" title="Желаемая должность" placeholder="Введите желаемую должность" type="text" required>
+                <input name="surname" class="contacts1" title="Ваша фамилия" placeholder="Введите фамилию" type="text" required>
+                <input name="name" class="contacts1" title="Ваше имя" placeholder="Введите имя" type="text" required>
+                <input name="otchevstvo" class="contacts1" title="Ваше отчество" placeholder="Введите отчество" type="text">
+                <input name="zhelaemaya_dolzhnost" class="contacts1" title="Желаемая должность" placeholder="Введите желаемую должность" type="text" required>
                 </form>
             </div>
         </div>
@@ -176,7 +191,7 @@ function addEdu() {
                 <h2>ОБРАЗОВАНИЕ</h2>
                 <form action="" method="post">
                     <img class="znachok" src="{% static 'Online_rezume/img/mortarboard.svg'%}">
-                    <input name="educ" id="ed" title="Учреждение образования" placeholder="Учреждение образования" type="text" required><br/>
+                    <input name="educ" class="ed" title="Учреждение образования" placeholder="Учреждение образования" type="text" required><br/>
                     <img class="znachok" src="{% static 'Online_rezume/img/briefcase.svg'%}">
                     <input class="spec" name="cvalif" title="СПО/Бакалавр/Профессор..." placeholder="Академическая степень или квалификация" type="text" required>
                     <img class="znachok" src="{% static 'Online_rezume/img/calendar.svg'%}">
