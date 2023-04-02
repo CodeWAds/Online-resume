@@ -313,7 +313,7 @@ padding-left: 4px;}
     
     .main{margin-top: 5px;}
     #cval{width: 90%;}
-    #kubok{padding-top: 0px;}
+    #kubok{padding-top: 2px;}
 }
     /* @media only screen and (max-width:700px){ 
         #ed, .spec, #cal,#cval, #years {width: 89%;}
