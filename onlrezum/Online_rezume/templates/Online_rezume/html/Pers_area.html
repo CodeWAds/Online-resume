@@ -20,10 +20,15 @@
 function addForm() {
   var form = document.createElement("form");
   // Добавляем поля формы
+  var photo = document.createElement("img");
+  photo.src="{% static 'Online_rezume/img/list-stars.svg'%}";
+  photo.className = 'znachok';
+  photo.id = 'spisok';
+  form.appendChild(photo);
   var input1 = document.createElement("input");
   input1.type = "text";
   input1.name = "skill_add";
-  input1.className = 'ed';
+  
   input1.placeholder = "Язык программирования/Коммуникабельность/Ответственность...";
   form.appendChild(input1);
   var pol1 = document.createElement("input");
@@ -45,11 +50,15 @@ function addForm() {
 function addLang() {
   var form = document.createElement("form");
   // Добавляем поля формы
-
+  var photo1 = document.createElement("img");
+  photo1.src="{% static 'Online_rezume/img/translate.svg'%}";
+  photo1.className = 'znachok';
+  photo1.id="trn";
+  form.appendChild(photo1);
   var input2 = document.createElement("input");
   input2.type = "text";
   input2.name = "lang_add";
-  input2.className = 'ed';
+  
   input2.placeholder = "Введите название языка";
   form.appendChild(input2);
   var pol = document.createElement("input");
@@ -70,23 +79,40 @@ function addLang() {
 function addEdu() {
     var form = document.createElement("form");
   // Добавляем поля формы
-
+  var photo3 = document.createElement("img");
+  photo3.src="{% static 'Online_rezume/img/mortarboard.svg'%}";
+  photo3.id="shlyapa";
+  photo3.className = 'znachok';
+  form.appendChild(photo3);
   var place = document.createElement("input");
   place.type = "text";
   place.name = "place_edu";
-  place.id ="edu_edu";
+  place.className = 'ed';
+  
   place.placeholder = "Учреждение образования";
   form.appendChild(place);
+  var photo4 = document.createElement("img");
+  photo4.src="{% static 'Online_rezume/img/briefcase.svg'%}";
+  photo4.className = 'znachok';
+  photo4.id ="chm";
+  form.appendChild(photo4);
   var cval = document.createElement("input");
   cval.type = "text";
   cval.name = "cval_edu";
-  cval.id= "cval";
+ 
+  cval.className = 'spec';
   cval.placeholder = "Академическая степень или квалификация";
   form.appendChild(cval);
+  var photo5 = document.createElement("img");
+  photo5.src="{% static 'Online_rezume/img/calendar.svg'%}";
+  photo5.className = 'znachok';
+  photo5.id = 'kal';
+  form.appendChild(photo5);
   var years = document.createElement("input");
   years.type = "text";
   years.name = "years_edu";
-  years.id= "years";
+  years.className = 'spec';
+  
   years.placeholder = "Годы обучения";
   form.appendChild(years);
   // Добавляем кнопку "Отмена"

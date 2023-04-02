@@ -213,6 +213,7 @@ padding-left: 4px;}
     width: 17px;
     background: url("../img/plus-circle.svg") no-repeat center;
     margin-left: 4px;
+    margin-bottom: 4px;
 }
 .plusik:hover{
     
@@ -280,7 +281,7 @@ padding-left: 4px;}
     -webkit-appearance: none;
     width: 90%;
     height: 7px;
-    border-radius: 15px 15px 15px 15px; 
+    border-radius: 15px 15px 15px 15px;
     background: #d3d3d3;
     outline: none;
     
@@ -360,4 +361,8 @@ padding-left: 4px;}
     .contacts1{
         width: 90%;
     }
-    #range_first, #range_second {width: 90%;}
+    
+    #shlyapa, #spisok, #trn, #chm,#kal{margin-right: 1px;}
+    #chm{display: inline;
+        white-space:break-spaces;
+    }
