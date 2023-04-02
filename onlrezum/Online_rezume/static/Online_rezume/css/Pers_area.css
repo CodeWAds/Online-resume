@@ -112,7 +112,7 @@ label:hover{cursor: pointer;}
 
 }
 input{white-space:nowrap;
-    
+    font-size: 16px;
     border-radius: 15px 15px 15px 15px;
 margin-top: 5px;
 margin-bottom: 5px;
