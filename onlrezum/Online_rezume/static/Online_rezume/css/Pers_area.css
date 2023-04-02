@@ -17,13 +17,17 @@ height : 100vh;
     border:1px solid red;
     margin-left: auto;
     margin-right: auto;
-    width:75%;
-    height : 100vh;
+    width:75vw;
+    
+    min-width: 270px;
     background: white;
     border-radius: 50px 50px 50px 50px;
     margin-top:50px;
+    
     box-shadow: 1px 1px 12px 12px rgba(0, 0, 255, .2);
     font-family: 'Inter', sans-serif;
+    margin-bottom: 50px;
+    min-height : 100vh;
 }
 .head{
     border:1px solid red;
@@ -32,46 +36,168 @@ height : 100vh;
     padding-bottom: 5px;
 }
 .first{
+    float: left;
     border:1px solid red;
-    height: 100%;
+    
     max-width: 21%;
+    min-width: 187px;
+    display:inline-block;
 }
 .photo{
-    border:1px solid red;
-    width: 200px;
+    
+    width: 100%;
     height: 200px;
     background: url("../img/camera.svg") no-repeat center;
+    cursor: pointer;
+    
     
 }
-label{border:1px solid red;
+
+label{
     display: block;
-    margin: 0px auto;
-    padding-bottom: 159px;
+    height: 200px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
     text-align: center;
-    cursor: pointer;
+    
     }
-#add_photo {border:1px solid red;
+label:hover{cursor: pointer;}
+#add_photo {
     font-family: 'Inter', sans-serif;
     text-align: center;
     background: url("../img/camera.svg") no-repeat center;
-    height: 200px;
-    width: 200px;
+    height: 0px;
+    width: 0px;
+    
+    margin-left: 0px;
+    
+}
+.photo:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
     cursor: pointer;
+
 }
 ::placeholder {
+    
     font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    
     
   }
+.znachok{
+    display: inline-block;
+    text-align: bottom;
+    display: inline-block;
+    margin-bottom: -3px;
+    height: 18px;
+    margin-right: -3px;
+    margin-left: 3px;
+    display: inline-block;
+   
 
-input{border-radius: 15px 15px 15px 15px;
+}
+input{white-space:nowrap;
+    
+    border-radius: 15px 15px 15px 15px;
 margin-top: 5px;
-margin-bottom: 5px;}
+margin-bottom: 5px;
+
+padding-top: 3px;
+padding-left: 4px;
+
+width: 81%;
+margin-left: 2px;
+display: inline;
+display: inline-block;
+white-space:nowrap;
+}
 .form{
     border:1px solid red ;
     padding-top:0;
     padding-bottom: 0;
+    
 }
 h2{border:1px solid red ;
+    width: 100%;
     text-align: center;
     margin-top: 0px;
     margin-bottom: 0px;}
+p{margin:0px;
+padding: 0px;}
+.second{ 
+    border:1px solid red;
+    
+    width: 39%;
+    min-width:180px;
+    margin-left: 0px;
+    display:inline-block;
+    vertical-align: top;
+    margin: 0px;
+    padding: 0px;
+}
+.third{
+    padding: 0px;
+    display: block;
+    margin-left: 0px;
+    border:1px solid red;
+    vertical-align: top;
+    width: 39%;
+    min-width:180px;
+    display:inline-block;
+    margin-left: -5px;
+    padding: 0px;
+    padding-bottom: 4px;
+}
+.fourth{border:1px solid red;
+    margin-left: 0px;
+    width: 78%;
+    min-width:360px;
+    float:right;
+    padding-left: 8px;
+}
+.spec{
+    width: 45.7%;
+    display: inline;
+}
+#cal{
+    margin-left: 3px;
+}
+#ed{
+    width: 95%;
+}
+textarea{width: 95%;
+height: 125px;
+resize: none;
+border-radius: 15px 15px 15px 15px;
+margin-top: 5px;
+margin-bottom: 5px;
+
+padding-top: 3px;
+padding-left: 4px;}
+#kubok{margin-right: 0px;
+    vertical-align: top;
+    padding-top: 20px;
+}
+.plusik{
+    border-radius: 8px 8px 8px 8px;
+    height: 17px;
+    width: 17px;
+    background: url("../img/plus-circle.svg") no-repeat center;
+    margin-left: 4px;
+}
+.plusik:hover{
+    
+    box-shadow: 1px 1px 3px 3px rgba(0, 0, 255, .2);
+}
+#edu_edu{
+    width: 97%;
+}
+#years{
+    width: 48%;
+}
+#cval{
+    width: 48%;
+}

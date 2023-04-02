@@ -10,6 +10,78 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+    <script language="JavaScript">
+function addForm() {
+  var form = document.createElement("form");
+  // Добавляем поля формы
+  var input1 = document.createElement("input");
+  input1.type = "text";
+  input1.name = "skill_add";
+  input1.placeholder = "Язык программирования/Коммуникабельность/Ответственность...";
+  form.appendChild(input1);
+  // Добавляем кнопку "Отмена"
+
+  var cancelButtonS = document.createElement("img");
+  cancelButtonS.src = "../img/minus.svg";
+  cancelButtonS.addEventListener("click", function() {
+    form.remove(); // Удаляем форму при нажатии на кнопку "Отмена"
+  });
+  form.appendChild(cancelButtonS);
+
+  document.getElementById("skill-container").appendChild(form);
+}
+function addLang() {
+  var form = document.createElement("form");
+  // Добавляем поля формы
+  var input2 = document.createElement("input");
+  input2.type = "text";
+  input2.name = "lang_add";
+  input2.placeholder = "Введите название языка";
+  form.appendChild(input2);
+  // Добавляем кнопку "Отмена"
+  var cancelButtonL = document.createElement("img");
+  cancelButtonL.src = "../img/minus.svg";
+  
+  cancelButtonL.addEventListener("click", function() {
+    form.remove(); // Удаляем форму при нажатии на кнопку "Отмена"
+  });
+  form.appendChild(cancelButtonL);
+  
+  document.getElementById("lang-container").appendChild(form);
+}
+function addEdu() {
+  var form = document.createElement("form");
+  // Добавляем поля формы
+  var place = document.createElement("input");
+  place.type = "text";
+  place.name = "place_edu";
+  place.id ="edu_edu";
+  place.placeholder = "Учреждение образования";
+  form.appendChild(place);
+  var cval = document.createElement("input");
+  cval.type = "text";
+  cval.name = "cval_edu";
+  cval.id= "cval";
+  cval.placeholder = "Академическая степень или квалификация";
+  form.appendChild(cval);
+  var years = document.createElement("input");
+  years.type = "text";
+  years.name = "years_edu";
+  years.id= "years";
+  years.placeholder = "Годы обучения";
+  form.appendChild(years);
+  // Добавляем кнопку "Отмена"
+  var cancelButtonEdu = document.createElement("img");
+  cancelButtonEdu.src = "../img/minus.svg";
+  
+  cancelButtonEdu.addEventListener("click", function() {
+    form.remove(); // Удаляем форму при нажатии на кнопку "Отмена"
+  });
+  form.appendChild(cancelButtonEdu);
+  
+  document.getElementById("edu-container").appendChild(form);
+}
+    </script>
 </head>
 <body class="back">
 
@@ -29,15 +101,92 @@
             </div>
             <div class="form">
                <form action="" method="post">
-                <img src="{% static 'Online_rezume/img/house.svg'%}">
+                
+                <img class="znachok" src="{% static 'Online_rezume/img/house.svg'%}">
                 <input name="city" placeholder="Введите город" required="required">
-                <img src="{% static 'Online_rezume/img/person.svg'%}">
+                <br />
+                
+                <img class="znachok" src="{% static 'Online_rezume/img/person.svg'%}">
                 <input name="old" placeholder="Укажите возраст" required="required">
+               
                </form>
             </div>
             <div class="form">
                 <h2>Навыки</h2>
-                <input name="skill" placeholder="Язык программирования/Категория водительских прав..." type="text" required="required">
+                <p>*добавьте навык(и) соответствующий(е) желаемой должности</p>
+                <form action="" method="post">
+                <img class="znachok" src="{% static 'Online_rezume/img/list-stars.svg'%}">
+                <input name="skill" title="Например, языки программирования/категория водительских прав/лидерство/коммуникабельность и т.д." placeholder="Язык программирования/Коммуникабельность/Ответственность..." type="text" required="required">
+                </form>
+                 
+                <button id="add_skill" hidden onclick="addForm()">Добавить форму</button>
+                <div id="skill-container"></div>
+                <label class="plusik" for="add_skill" title="Нажмите, чтобы добавить ещё одно поле"></label>  
+            </div>
+             <div class="form">
+                
+                <h2>Иностранные языки</h2>
+                <p>*укажите иностранный язык(и), если Вы им(и) владеете</p>
+                <form action="" method="post">
+                <img class="znachok" src="{% static 'Online_rezume/img/translate.svg'%}">
+                <input name="lang" title="Например, английский/немецкий/испанский/итальянский и т.д." placeholder="Введите название языка" type="text">
+                </form>
+                
+                <button id="add_lang" hidden  title="Нажмите, чтобы добавить ещё одно поле" onclick="addLang()"></button>
+                <div id="lang-container"></div>
+                <label class="plusik" for="add_lang" title="Нажмите, чтобы добавить ещё одно поле"></label>
+            </div>
+        
+        </div>
+        <div class="second">
+            <div class="form">
+                <form action="" method="post">
+                <input name="surname" title="Ваша фамилия" placeholder="Введите фамилию" type="text" required>
+                <input name="name" title="Ваше имя" placeholder="Введите имя" type="text" required>
+                <input name="otchevstvo" title="Ваше отчество" placeholder="Введите отчество" type="text">
+                <input name="zhelaemaya_dolzhnost" title="Желаемая должность" placeholder="Введите желаемую должность" type="text" required>
+                </form>
+            </div>
+        </div>
+        <div class="third">
+            <div class="contacts">
+                <h2>КОНТАКТЫ</h2>
+                <form action="" method="post">
+                    <img class="znachok" src="{% static 'Online_rezume/img/telephone.svg'%}">
+                    <input name="phone" title="Ваш номер телефона" placeholder="Укажите номер телефона" type="text" required><br/>
+                    <img class="znachok" src="{% static 'Online_rezume/img/envelope-at.svg'%}">
+                    <input name="email" title="Ваше имя" placeholder="Укажите адрес электронной почты" type="text" required><br/>
+                    <img class="znachok" src="{% static 'Online_rezume/img/telegram.svg'%}">
+                    <input name="telegram" title="Ваше отчество" placeholder="Укажите Ваш Telegram" type="text"><br/>
+                </form>
+            </div>
+        </div>
+        <div class="fourth">
+            <div class="edu">
+                <h2>ОБРАЗОВАНИЕ</h2>
+                <form action="" method="post">
+                    <img class="znachok" src="{% static 'Online_rezume/img/mortarboard.svg'%}">
+                    <input name="educ" id="ed" title="Учреждение образования" placeholder="Учреждение образования" type="text" required><br/>
+                    <img class="znachok" src="{% static 'Online_rezume/img/briefcase.svg'%}">
+                    <input class="spec" name="cvalif" title="СПО/Бакалавр/Профессор..." placeholder="Академическая степень или квалификация" type="text" required>
+                    <img class="znachok" src="{% static 'Online_rezume/img/calendar.svg'%}">
+                    <input class="spec" id="cal" name="years" title="укажите с какого по какой год (через дефис)" placeholder="Годы обучения" type="text" required>
+                </form>
+                    <button id="add_edu" hidden  title="Нажмите, чтобы добавить ещё одно поле" onclick="addEdu()"></button>
+                    <div id="edu-container"></div>
+                    <label class="plusik" for="add_edu" title="Нажмите, чтобы добавить ещё одно поле"></label>
+
+
+                
+                <h2>О СЕБЕ</h2>
+                <form action="" method="post">
+                    <img id="kubok" class="znachok" src="{% static 'Online_rezume\img\trophy.svg'%}">
+                    
+                    <textarea name="about"  title="Достижения/хобби/опыт работы" placeholder="Расскажите о своём опыте работы, достижениях, пройденных курсах, хобби и прочем"  required></textarea><br/>
+
+
+
+                </form>
             </div>
         </div>
         
