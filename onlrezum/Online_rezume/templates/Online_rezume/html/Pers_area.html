@@ -11,6 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
     <script language="JavaScript">
+        window.addEventListener('beforeunload', (event) => {
+  // Отмените событие, как указано в стандарте.
+  event.preventDefault();
+  // Chrome требует установки возвратного значения.
+  event.returnValue = '';
+});
 function addForm() {
   var form = document.createElement("form");
   // Добавляем поля формы
@@ -22,7 +28,8 @@ function addForm() {
   // Добавляем кнопку "Отмена"
 
   var cancelButtonS = document.createElement("img");
-  cancelButtonS.src = "../img/minus.svg";
+  cancelButtonS.src = "{% static 'Online_rezume/img/minus.svg'%}";
+  cancelButtonS.id  = "krestS";
   cancelButtonS.addEventListener("click", function() {
     form.remove(); // Удаляем форму при нажатии на кнопку "Отмена"
   });
@@ -40,8 +47,8 @@ function addLang() {
   form.appendChild(input2);
   // Добавляем кнопку "Отмена"
   var cancelButtonL = document.createElement("img");
-  cancelButtonL.src = "../img/minus.svg";
-  
+  cancelButtonL.src = "{% static 'Online_rezume/img/minus.svg'%}";
+  cancelButtonL.id  = "krestL";
   cancelButtonL.addEventListener("click", function() {
     form.remove(); // Удаляем форму при нажатии на кнопку "Отмена"
   });
@@ -50,8 +57,9 @@ function addLang() {
   document.getElementById("lang-container").appendChild(form);
 }
 function addEdu() {
-  var form = document.createElement("form");
+    var form = document.createElement("form");
   // Добавляем поля формы
+
   var place = document.createElement("input");
   place.type = "text";
   place.name = "place_edu";
@@ -72,8 +80,8 @@ function addEdu() {
   form.appendChild(years);
   // Добавляем кнопку "Отмена"
   var cancelButtonEdu = document.createElement("img");
-  cancelButtonEdu.src = "../img/minus.svg";
-  
+  cancelButtonEdu.src = "{% static 'Online_rezume/img/minus.svg'%}";
+  cancelButtonEdu.id  = "krestEdu";
   cancelButtonEdu.addEventListener("click", function() {
     form.remove(); // Удаляем форму при нажатии на кнопку "Отмена"
   });
@@ -90,7 +98,7 @@ function addEdu() {
         <div class="head">
             <h1>РЕЗЮМЕ</h1>
         </div>
-
+        <div class="grid">
         <div class="first">
             <div class="photo">
                 <form action="" method="post">
@@ -112,8 +120,8 @@ function addEdu() {
                </form>
             </div>
             <div class="form">
-                <h2>Навыки</h2>
-                <p>*добавьте навык(и) соответствующий(е) желаемой должности</p>
+                <h2>НАВЫКИ</h2>
+                <p id="wrap">*добавьте навык(и) соответствующий(е) желаемой должности</p>
                 <form action="" method="post">
                 <img class="znachok" src="{% static 'Online_rezume/img/list-stars.svg'%}">
                 <input name="skill" title="Например, языки программирования/категория водительских прав/лидерство/коммуникабельность и т.д." placeholder="Язык программирования/Коммуникабельность/Ответственность..." type="text" required="required">
@@ -123,9 +131,10 @@ function addEdu() {
                 <div id="skill-container"></div>
                 <label class="plusik" for="add_skill" title="Нажмите, чтобы добавить ещё одно поле"></label>  
             </div>
+            <div class="for_lang">
              <div class="form">
                 
-                <h2>Иностранные языки</h2>
+                <h2>ИНОСТРАННЫЕ ЯЗЫКИ</h2>
                 <p>*укажите иностранный язык(и), если Вы им(и) владеете</p>
                 <form action="" method="post">
                 <img class="znachok" src="{% static 'Online_rezume/img/translate.svg'%}">
@@ -135,6 +144,7 @@ function addEdu() {
                 <button id="add_lang" hidden  title="Нажмите, чтобы добавить ещё одно поле" onclick="addLang()"></button>
                 <div id="lang-container"></div>
                 <label class="plusik" for="add_lang" title="Нажмите, чтобы добавить ещё одно поле"></label>
+            </div>
             </div>
         
         </div>
@@ -162,7 +172,7 @@ function addEdu() {
             </div>
         </div>
         <div class="fourth">
-            <div class="edu">
+            
                 <h2>ОБРАЗОВАНИЕ</h2>
                 <form action="" method="post">
                     <img class="znachok" src="{% static 'Online_rezume/img/mortarboard.svg'%}">
@@ -175,21 +185,18 @@ function addEdu() {
                     <button id="add_edu" hidden  title="Нажмите, чтобы добавить ещё одно поле" onclick="addEdu()"></button>
                     <div id="edu-container"></div>
                     <label class="plusik" for="add_edu" title="Нажмите, чтобы добавить ещё одно поле"></label>
-
-
-                
+     
                 <h2>О СЕБЕ</h2>
                 <form action="" method="post">
-                    <img id="kubok" class="znachok" src="{% static 'Online_rezume\img\trophy.svg'%}">
-                    
-                    <textarea name="about"  title="Достижения/хобби/опыт работы" placeholder="Расскажите о своём опыте работы, достижениях, пройденных курсах, хобби и прочем"  required></textarea><br/>
-
-
-
+                <img id="kubok" class="znachok" src="{% static 'Online_rezume\img\trophy.svg'%}">
+                <textarea name="about"  title="Достижения/хобби/опыт работы" placeholder="Расскажите о своём опыте работы, достижениях, пройденных курсах, хобби и прочем"  required></textarea><br/>
                 </form>
-            </div>
+            
         </div>
-        
+    </div>   
     </div>
+    <div id="copback">
+        <p id="copyright"><b>2022-2023 © Easy-Resume</b></p>
+      </div>
 </body>
 </html>

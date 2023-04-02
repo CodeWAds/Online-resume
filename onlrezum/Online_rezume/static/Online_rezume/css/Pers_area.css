@@ -1,3 +1,6 @@
+body{
+    height: auto;
+}
 .back {
       /* Добавим пару радиальных градиентов */
   background:
@@ -10,14 +13,14 @@ margin-left: 0px;
 margin-top: 0px;
 margin-right: 0px;
 margin-bottom: 0px;
-height : 100vh;
+height:100vh;
 
 }
 .main{
     border:1px solid red;
     margin-left: auto;
     margin-right: auto;
-    width:75vw;
+    max-width:1200px;
     
     min-width: 270px;
     background: white;
@@ -27,21 +30,29 @@ height : 100vh;
     box-shadow: 1px 1px 12px 12px rgba(0, 0, 255, .2);
     font-family: 'Inter', sans-serif;
     margin-bottom: 50px;
-    min-height : 100vh;
+    
+    min-height:auto;
+    padding-bottom: 20px;
+    
 }
 .head{
     border:1px solid red;
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
+    border-radius: 15px 15px 20px 20px;
+    background-color: rgb(255,130,67);
+    color:white;
+    margin-bottom: 10px;
+    text-shadow: black 0 0 2px;
 }
 .first{
-    float: left;
+    
     border:1px solid red;
     
-    max-width: 21%;
-    min-width: 187px;
-    display:inline-block;
+   
+    
+    display: inline-block;
 }
 .photo{
     
@@ -49,10 +60,9 @@ height : 100vh;
     height: 200px;
     background: url("../img/camera.svg") no-repeat center;
     cursor: pointer;
-    
-    
+    border-radius: 15px 15px 20px 20px;   
 }
-
+#wrap{word-wrap:break-word;}
 label{
     display: block;
     height: 200px;
@@ -74,6 +84,7 @@ label:hover{cursor: pointer;}
 }
 .photo:hover{
     background-color: #c8c8c8;
+    
     box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
     cursor: pointer;
 
@@ -90,12 +101,13 @@ label:hover{cursor: pointer;}
 .znachok{
     display: inline-block;
     text-align: bottom;
-    display: inline-block;
+    
     margin-bottom: -3px;
     height: 18px;
     margin-right: -3px;
     margin-left: 3px;
-    display: inline-block;
+    
+  
    
 
 }
@@ -104,13 +116,13 @@ input{white-space:nowrap;
     border-radius: 15px 15px 15px 15px;
 margin-top: 5px;
 margin-bottom: 5px;
-
+font-family: 'Inter', sans-serif;
 padding-top: 3px;
 padding-left: 4px;
 
 width: 81%;
 margin-left: 2px;
-display: inline;
+
 display: inline-block;
 white-space:nowrap;
 }
@@ -124,49 +136,62 @@ h2{border:1px solid red ;
     width: 100%;
     text-align: center;
     margin-top: 0px;
-    margin-bottom: 0px;}
+    margin-bottom: 0px;
+    border-radius: 15px 15px 20px 20px;
+    background-color: rgb(255,130,67);
+    color:white;
+    text-shadow: black 0 0 2px;
+}
 p{margin:0px;
 padding: 0px;}
+
 .second{ 
     border:1px solid red;
     
-    width: 39%;
-    min-width:180px;
-    margin-left: 0px;
-    display:inline-block;
+    
+    
+    margin-left: 0px; 
     vertical-align: top;
     margin: 0px;
     padding: 0px;
+    display: inline-block;
+    
 }
 .third{
-    padding: 0px;
-    display: block;
-    margin-left: 0px;
     border:1px solid red;
+    
+   
+    
+    margin-left: 0px; 
     vertical-align: top;
-    width: 39%;
-    min-width:180px;
-    display:inline-block;
-    margin-left: -5px;
+    margin: 0px;
     padding: 0px;
-    padding-bottom: 4px;
+    display: inline-block;
+    
 }
 .fourth{border:1px solid red;
     margin-left: 0px;
-    width: 78%;
-    min-width:360px;
-    float:right;
-    padding-left: 8px;
+    
+    
+    padding-left: 0px;
+    
+    display: inline-block;
+
 }
-.spec{
-    width: 45.7%;
-    display: inline;
+
+.spec, #cal{
+    width: 42.7%;
+    display: inline-block;
+    white-space:nowrap;
 }
 #cal{
-    margin-left: 3px;
+    margin-left: 1px;
+
 }
 #ed{
-    width: 95%;
+    width: 90%;
+    display: inline-block;
+white-space:nowrap;
 }
 textarea{width: 95%;
 height: 125px;
@@ -174,7 +199,7 @@ resize: none;
 border-radius: 15px 15px 15px 15px;
 margin-top: 5px;
 margin-bottom: 5px;
-
+font-family: 'Inter', sans-serif;
 padding-top: 3px;
 padding-left: 4px;}
 #kubok{margin-right: 0px;
@@ -182,7 +207,7 @@ padding-left: 4px;}
     padding-top: 20px;
 }
 .plusik{
-    border-radius: 8px 8px 8px 8px;
+    border-radius: 8px 8px 10px 8px;
     height: 17px;
     width: 17px;
     background: url("../img/plus-circle.svg") no-repeat center;
@@ -190,14 +215,101 @@ padding-left: 4px;}
 }
 .plusik:hover{
     
-    box-shadow: 1px 1px 3px 3px rgba(0, 0, 255, .2);
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 255, .2);
 }
 #edu_edu{
-    width: 97%;
+    width: 92.2%;
 }
-#years{
-    width: 48%;
+#years, #cval{
+    width: 45.5%;
 }
-#cval{
-    width: 48%;
+
+
+
+#krestS, #krestEdu, #krestL{border-radius: 8px 8px 8px 8px; 
+    height: 17px;
+    width: 17px;
+    margin-left: 2px;
+    margin-bottom: -1px;
+
 }
+#krestL:hover, #krestEdu:hover, #krestS:hover{
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 255, .2);
+    cursor: pointer;
+}
+
+
+
+.main{max-width:1200px;
+    height: auto;}
+
+.grid{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 30% 35% 35%;
+    grid-template-rows:  200px 100%;
+    grid-gap: 0px;
+    grid-template-areas:
+      
+    "first second third"
+    "first fourth fourth"
+    "first fifth fifth"
+}
+.first {
+    grid-area: first;
+  }
+  
+  .second {
+    grid-area: second;
+  }
+  
+  .third {
+    grid-area: third;
+  }
+  
+  .fourth {
+    grid-area: fourth;}
+.for_lang{grid-area: lang;}
+  
+  .fifth{grid-area: fifth;}
+  @media only screen and (max-width:692px){#ed, .spec, #cal,#cval, #years {width: 89%;}}
+  @media only screen and (max-width:515px){input {width: 75%;} #ed, .spec, #cal,#cval, #years {width: 85%;}}
+  @media only screen and (max-width:415px){
+    .grid{
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows:  200px auto auto auto auto;
+        grid-template-areas:
+      
+        "first second"
+        "first third"
+      "first fourth"
+      
+      "fifth fifth"
+    } 
+    h2{font-size: 18px;}
+    h1{font-size: 21px;padding-top: 5px;}
+    #ed, .spec, #cal, #years {width: 81%;}
+    
+    
+    .main{margin-top: 5px;}
+    #cval{width: 90%;}
+    #kubok{padding-top: 0px;}
+}
+    /* @media only screen and (max-width:700px){ 
+        #ed, .spec, #cal,#cval, #years {width: 89%;}
+    
+} */
+.znachok{   pointer-events: none; /*элемент не может стать объектом мыши*/
+    user-select: none; /*запрет на перенос текста*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;}
+    #copyright {
+        text-align: center;
+        margin-top: 2px;
+        font-family: 'Inter', sans-serif;
+        font-size: 10px;
+        color: rgb(186, 186, 186);
+      }
