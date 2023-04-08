@@ -11,120 +11,140 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
     <script language="JavaScript">
-        window.addEventListener('beforeunload', (event) => {
-  // Отмените событие, как указано в стандарте.
-  event.preventDefault();
-  // Chrome требует установки возвратного значения.
-  event.returnValue = '';
-});
-function addForm() {
-  var form = document.createElement("form");
-  // Добавляем поля формы
+
+function addForm() {event.preventDefault();
+    const uniqueId = `div-${Date.now()}`; // генерируем уникальный ID
+const div = document.createElement("div");
   var photo = document.createElement("img");
   photo.src="{% static 'Online_rezume/img/list-stars.svg'%}";
   photo.className = 'znachok';
   photo.id = 'spisok';
-  form.appendChild(photo);
+  div.appendChild(photo);
   var input1 = document.createElement("input");
   input1.type = "text";
-  input1.name = "skill_add";
-  
+  input1.name = "skill_add" + new Date().getTime();
   input1.placeholder = "Язык программирования/Коммуникабельность/Ответственность...";
-  form.appendChild(input1);
+  div.appendChild(input1);
   var pol1 = document.createElement("input");
   pol1.type = "range";
+  pol1.name = "level" + new Date().getTime();
   pol1.className = 'slider';
-  form.appendChild(pol1);
+  div.appendChild(pol1);
   // Добавляем кнопку "Отмена"
-
   var cancelButtonS = document.createElement("img");
   cancelButtonS.src = "{% static 'Online_rezume/img/minus.svg'%}";
-  cancelButtonS.id  = "krestS";
+  cancelButtonS.id  =  "krestS" + new Date().getTime();
+  cancelButtonS.style.cursor = "pointer";
+  cancelButtonS.style.borderRadius = "8px";
+  cancelButtonS.addEventListener("mouseover", function() {
+this.style.boxShadow = "0px 0px 3px 3px rgba(0, 0, 255, .2)";
+});
+cancelButtonS.addEventListener("mouseout", function() {
+this.style.boxShadow = "";
+});
   cancelButtonS.addEventListener("click", function() {
-    form.remove(); // Удаляем форму при нажатии на кнопку "Отмена"
+    div.remove(); // Удаляем форму при нажатии на кнопку "Отмена"
   });
-  form.appendChild(cancelButtonS);
-
-  document.getElementById("skill-container").appendChild(form);
+  div.appendChild(cancelButtonS);
+  document.getElementById("skill-container").appendChild(div);
 }
-function addLang() {
-  var form = document.createElement("form");
-  // Добавляем поля формы
+function addLang() {event.preventDefault();
+    const uniqueId = `div1-${Date.now()}`; // генерируем уникальный ID
+const div1 = document.createElement("div");
   var photo1 = document.createElement("img");
   photo1.src="{% static 'Online_rezume/img/translate.svg'%}";
   photo1.className = 'znachok';
   photo1.id="trn";
-  form.appendChild(photo1);
+  div1.appendChild(photo1);
   var input2 = document.createElement("input");
   input2.type = "text";
-  input2.name = "lang_add";
-  
+  input2.name = "lang_add" + new Date().getTime();
   input2.placeholder = "Введите название языка";
-  form.appendChild(input2);
+  div1.appendChild(input2);
   var pol = document.createElement("input");
   pol.type = "range";
+  pol.name = "level" + new Date().getTime();
   pol.className = 'slider';
-  form.appendChild(pol);
+  div1.appendChild(pol);
   // Добавляем кнопку "Отмена"
   var cancelButtonL = document.createElement("img");
   cancelButtonL.src = "{% static 'Online_rezume/img/minus.svg'%}";
-  cancelButtonL.id  = "krestL";
+  cancelButtonL.id  = "krestL" + new Date().getTime();
+  cancelButtonL.style.cursor = "pointer";
+  cancelButtonL.style.borderRadius = "8px";
+  cancelButtonL.addEventListener("mouseover", function() {
+this.style.boxShadow = "0px 0px 3px 3px rgba(0, 0, 255, .2)";
+});
+cancelButtonL.addEventListener("mouseout", function() {
+this.style.boxShadow = "";
+});
   cancelButtonL.addEventListener("click", function() {
-    form.remove(); // Удаляем форму при нажатии на кнопку "Отмена"
+    div1.remove(); // Удаляем форму при нажатии на кнопку "Отмена"
   });
-  form.appendChild(cancelButtonL);
+  div1.appendChild(cancelButtonL);
   
-  document.getElementById("lang-container").appendChild(form);
+  document.getElementById("lang-container").appendChild(div1);
 }
-function addEdu() {
-    var form = document.createElement("form");
-  // Добавляем поля формы
+function addEdu() {event.preventDefault();
+    const uniqueId = `div2-${Date.now()}`;
+    const div2 = document.createElement("div");
   var photo3 = document.createElement("img");
   photo3.src="{% static 'Online_rezume/img/mortarboard.svg'%}";
   photo3.id="shlyapa";
   photo3.className = 'znachok';
-  form.appendChild(photo3);
+  div2.appendChild(photo3);
   var place = document.createElement("input");
   place.type = "text";
-  place.name = "place_edu";
+  place.name = "place_edu" + new Date().getTime();
   place.className = 'ed';
   
   place.placeholder = "Учреждение образования";
-  form.appendChild(place);
+  div2.appendChild(place);
   var photo4 = document.createElement("img");
   photo4.src="{% static 'Online_rezume/img/briefcase.svg'%}";
+  var mybr = document.createElement('br');
+  div2.appendChild(mybr);
   photo4.className = 'znachok';
   photo4.id ="chm";
-  form.appendChild(photo4);
+  div2.appendChild(photo4);
   var cval = document.createElement("input");
   cval.type = "text";
-  cval.name = "cval_edu";
+  cval.name = "cval_edu" + new Date().getTime();
  
   cval.className = 'spec';
   cval.placeholder = "Академическая степень или квалификация";
-  form.appendChild(cval);
+  div2.appendChild(cval);
   var photo5 = document.createElement("img");
   photo5.src="{% static 'Online_rezume/img/calendar.svg'%}";
+  photo5.style.marginLeft ="6px";
   photo5.className = 'znachok';
   photo5.id = 'kal';
-  form.appendChild(photo5);
+  div2.appendChild(photo5);
   var years = document.createElement("input");
   years.type = "text";
-  years.name = "years_edu";
+  years.name = "years_edu" + new Date().getTime();
   years.className = 'spec';
   
   years.placeholder = "Годы обучения";
-  form.appendChild(years);
+  div2.appendChild(years);
   // Добавляем кнопку "Отмена"
   var cancelButtonEdu = document.createElement("img");
   cancelButtonEdu.src = "{% static 'Online_rezume/img/minus.svg'%}";
-  cancelButtonEdu.id  = "krestEdu";
+  cancelButtonEdu.id  = "krestEdu" + new Date().getTime();
+  cancelButtonEdu.style.cursor = "pointer";
+  cancelButtonEdu.style.borderRadius = "8px";
+  cancelButtonEdu.addEventListener("mouseover", function() {
+this.style.boxShadow = "0px 0px 3px 3px rgba(0, 0, 255, .2)";
+});
+cancelButtonEdu.addEventListener("mouseout", function() {
+this.style.boxShadow = "";
+});
   cancelButtonEdu.addEventListener("click", function() {
-    form.remove(); // Удаляем форму при нажатии на кнопку "Отмена"
+    div2.remove(); // Удаляем форму при нажатии на кнопку "Отмена"
   });
-  form.appendChild(cancelButtonEdu);
+  div2.appendChild(cancelButtonEdu);
   
-  document.getElementById("edu-container").appendChild(form);
+  document.getElementById("edu-container").appendChild(div2);
 }
     </script>
 </head>
@@ -133,19 +153,19 @@ function addEdu() {
     
     <div class="main">
         <div class="head">
-            <h1>РЕЗЮМЕ</h1>
+            <h1>Резюме</h1>
         </div>
         <div class="grid">
         <div class="first">
             <div class="photo">
-                <form action="" method="post">
+                <form id="send_photo" action="" method="post">
                 {% csrf_token %}
-                     <label for="add_photo">Нажмите сюда, чтобы добавить фото</label>
+                     <label for="add_photo">Нажмите здесь, чтобы добавить фото</label>
                      <input id="add_photo" type="file" style="visibility:hidden; "name="photocka" src="{% static 'Online_rezume/img/camera.svg'%}" title="Нажмите сюда, чтобы добавить фото" accept="image/*">
                </form>
             </div>
             <div class="form">
-               <form action="" method="post">
+               <form id="age_city" action="" method="post">
                 
                 <img class="znachok" src="{% static 'Online_rezume/img/house.svg'%}">
                 <input name="city" placeholder="Введите город" required="required">
@@ -157,41 +177,41 @@ function addEdu() {
                </form>
             </div>
             <div class="form">
-                <h2>НАВЫКИ</h2>
+                <h2>Навыки</h2>
                 <p id="wrap">1) добавьте навык(и) соответствующий(е) желаемой должности</p>
-                <form action="" method="post">
+                <form id="skills_base" action="" method="post">
+                    {% csrf_token %}
                 <img class="znachok" src="{% static 'Online_rezume/img/list-stars.svg'%}">
                 <input name="skill" title="Например, языки программирования/категория водительских прав/лидерство/коммуникабельность и т.д." placeholder="Язык программирования/Коммуникабельность/Ответственность..." type="text" required="required">
                 <p>2) уровень компетентности</p>
-                <input type="range" min="1" max="100" value="50" class="slider" id="range_first" required > 
-                </form>
-                </form>
-                <button id="add_skill" hidden onclick="addForm()">Добавить форму</button>
+                <input type="range" min="0" max="100" value="50" class="slider" id="range_first" required > 
+                <button type="button" id="add_skill" hidden onclick="addForm()">Добавить форму</button>
                 <div id="skill-container"></div>
                 <label class="plusik" for="add_skill" title="Нажмите, чтобы добавить ещё одно поле"></label>  
+                </form>
             </div>
             <div class="for_lang">
              <div class="form">
                 
-                <h2>ИНОСТРАННЫЕ ЯЗЫКИ</h2>
+                <h2>Иностранные языки</h2>
                 <p>1) укажите иностранный язык(и), если Вы им(и) владеете</p>
-                <form action="" method="post">
+                <form id ="lang_base" action="" method="post">
+                    {% csrf_token %}
                 <img class="znachok" src="{% static 'Online_rezume/img/translate.svg'%}">
                 <input name="lang" title="Например, английский/немецкий/испанский/итальянский и т.д." placeholder="Введите название языка" type="text">
                 <p>2) уровень владения</p>
-                <input type="range" min="1" max="100" value="50" class="slider" id="range_second"  id="myRange"> 
-                </form>
-                
-                <button id="add_lang" hidden  title="Нажмите, чтобы добавить ещё одно поле" onclick="addLang()"></button>
+                <input type="range" min="0" max="100" value="50" class="slider" id="range_second"  id="myRange"> 
+                <button type="button" id="add_lang" hidden  title="Нажмите, чтобы добавить ещё одно поле" onclick="addLang()"></button>
                 <div id="lang-container"></div>
-                <label class="plusik" for="add_lang" title="Нажмите, чтобы добавить ещё одно поле"></label>
+                <label class="plusik" id="last_plus" for="add_lang" title="Нажмите, чтобы добавить ещё одно поле"></label>
+                </form>
             </div>
             </div>
         
         </div>
         <div class="second">
             <div class="form">
-                <form action="" method="post">
+                <form id="names_zp" action="" method="post">
                 <input name="surname" class="contacts1" title="Ваша фамилия" placeholder="Введите фамилию" type="text" required>
                 <input name="name" class="contacts1" title="Ваше имя" placeholder="Введите имя" type="text" required>
                 <input name="otchevstvo" class="contacts1" title="Ваше отчество" placeholder="Введите отчество" type="text">
@@ -202,8 +222,8 @@ function addEdu() {
         </div>
         <div class="third">
             <div class="contacts">
-                <h2>КОНТАКТЫ</h2>
-                <form action="" method="post">
+                <h2>Контакты</h2>
+                <form id="contacts_base" action="" method="post">
                     <img class="znachok" src="{% static 'Online_rezume/img/telephone.svg'%}">
                     <input name="phone" title="Ваш номер телефона" placeholder="Укажите номер телефона" type="text" required><br/>
                     <img class="znachok" src="{% static 'Online_rezume/img/envelope-at.svg'%}">
@@ -215,26 +235,84 @@ function addEdu() {
         </div>
         <div class="fourth">
             
-                <h2>ОБРАЗОВАНИЕ</h2>
-                <form action="" method="post">
+                <h2>Образование</h2>
+                <form id="education_base" action="" method="post">
                     <img class="znachok" src="{% static 'Online_rezume/img/mortarboard.svg'%}">
                     <input name="educ" class="ed" title="Учреждение образования" placeholder="Учреждение образования" type="text" required><br/>
                     <img class="znachok" src="{% static 'Online_rezume/img/briefcase.svg'%}">
                     <input class="spec" name="cvalif" title="СПО/Бакалавр/Профессор..." placeholder="Академическая степень или квалификация" type="text" required>
-                    <img class="znachok" src="{% static 'Online_rezume/img/calendar.svg'%}">
+                    <img class="znachok" id="calendarik" src="{% static 'Online_rezume/img/calendar.svg'%}">
                     <input class="spec" id="cal" name="years" title="укажите с какого по какой год (через дефис)" placeholder="Годы обучения" type="text" required>
                 </form>
                     <button id="add_edu" hidden  title="Нажмите, чтобы добавить ещё одно поле" onclick="addEdu()"></button>
                     <div id="edu-container"></div>
-                    <label class="plusik" for="add_edu" title="Нажмите, чтобы добавить ещё одно поле"></label>
+                    <label class="plusik"  for="add_edu" title="Нажмите, чтобы добавить ещё одно поле"></label>
      
-                <h2>О СЕБЕ</h2>
-                <form action="" method="post">
+                <h2>О себе</h2>
+                <form id="about" action="" method="post">
                 <img id="kubok" class="znachok" src="{% static 'Online_rezume\img\trophy.svg'%}">
-                <textarea name="about"  title="Достижения/хобби/опыт работы" placeholder="Расскажите о своём опыте работы, достижениях, пройденных курсах, хобби и прочем"  required></textarea><br/>
+                <textarea name="abouts"  title="Достижения/хобби/опыт работы" placeholder="Расскажите о своём опыте работы, достижениях, пройденных курсах, хобби и прочем"  required></textarea><br/>
                 </form>
             
         </div>
+        <div class="fifth">
+            <label id="label_submitButton" for="submitButton" title="Сохранить РЕЗЮМЕ">Сохранить</label>  
+            <button hidden id="submitButton">Отправить формы</button>
+            <script>
+            const form1 = document.getElementById('send_photo'); // получаем первую форму
+            const form2 = document.getElementById("age_city");
+            const form3 = document.getElementById("skills_base");
+            const form4 = document.getElementById("lang_base");
+            const form5 = document.getElementById("names_zp");
+            const form6 = document.getElementById("contacts_base");
+            const form7 = document.getElementById("education_base");
+            const form8 = document.getElementById("about");
+            const button = document.getElementById('submitButton'); // получаем кнопку отправки
+            button.addEventListener('click', (event) => { // добавляем обработчик клика на кнопку
+            event.preventDefault(); // отменяем стандартное поведение кнопки
+            const formData1 = new FormData(form1); // создаем объект FormData из данных первой формы
+            const formData2 = new FormData(form2);
+            const formData3 = new FormData(form3);
+            const formData4 = new FormData(form4);
+            const formData5 = new FormData(form5);
+            const formData6 = new FormData(form6);
+            const formData7 = new FormData(form7);
+            const formData8 = new FormData(form8);
+           
+            const xhr1 = new XMLHttpRequest(); // создаем объект XMLHttpRequest для отправки данных первой формы на сервер
+            const xhr2 = new XMLHttpRequest();
+            const xhr3 = new XMLHttpRequest();
+            const xhr4 = new XMLHttpRequest();
+            const xhr5 = new XMLHttpRequest();
+            const xhr6 = new XMLHttpRequest();
+            const xhr7 = new XMLHttpRequest();
+            const xhr8 = new XMLHttpRequest();
+           
+            xhr1.open('POST', form1.action); // настраиваем запрос на отправку данных методом POST на URL-адрес первой формы
+            xhr2.open('POST', form2.action);
+            xhr3.open('POST', form3.action);
+            xhr4.open('POST', form4.action);
+            xhr5.open('POST', form5.action);
+            xhr6.open('POST', form6.action);
+            xhr7.open('POST', form7.action);
+            xhr8.open('POST', form8.action);
+ 
+
+            xhr1.send(formData1); // отправляем данные первой формы на сервер
+            xhr2.send(formData2);
+            xhr3.send(formData3);
+            xhr4.send(formData4);
+            xhr5.send(formData5);
+            xhr6.send(formData6);
+            xhr7.send(formData7); 
+            xhr8.send(formData8);
+
+            
+            // дополнительный код, который будет выполнен после отправки форм
+            });
+            </script>
+            
+            </div>
     </div>   
     </div>
     <div id="copback">

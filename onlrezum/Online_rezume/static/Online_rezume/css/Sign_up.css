@@ -7,6 +7,7 @@
     color: white;
     padding-top: 0px;
     padding-bottom: 10px;
+    text-shadow: black 0 0 2px;
     }
 * {box-sizing: border-box}
 .privacy{
@@ -66,6 +67,8 @@ hr {
   margin-top: 0px;
   margin-left:auto;
   margin-right: auto;
+  text-shadow: black 0 0 2px;
+  padding: 16px 20px;
 }
 
 h2 {

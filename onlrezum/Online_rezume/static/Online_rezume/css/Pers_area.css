@@ -8,7 +8,6 @@ body{
   radial-gradient(ellipse at 60% 60%, blue, transparent);
 /* И смешаем их с помощью бленда мода */
 background-blend-mode: screen;
-
 margin-left: 0px;
 margin-top: 0px;
 margin-right: 0px;
@@ -17,26 +16,21 @@ height:100vh;
 
 }
 .main{
-    border:1px solid red;
+    /* border:1px solid red; */
     margin-left: auto;
     margin-right: auto;
     max-width:1200px;
-    
     min-width: 270px;
     background: white;
     border-radius: 50px 50px 50px 50px;
-    margin-top:50px;
-    
     box-shadow: 1px 1px 12px 12px rgba(0, 0, 255, .2);
     font-family: 'Inter', sans-serif;
     margin-bottom: 0px;
-    
     min-height:auto;
     padding-bottom: 20px;
-    
 }
 .head{
-    border:1px solid red;
+    /* border:1px solid red; */
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -46,16 +40,11 @@ height:100vh;
     margin-bottom: 10px;
     text-shadow: black 0 0 2px;
 }
-.first{
-    
-    border:1px solid red;
-    
-   
-    
+.first{  
+    /* border:1px solid red;     */
     display: inline-block;
 }
 .photo{
-    
     width: 100%;
     height: 200px;
     background: url("../img/camera.svg") no-repeat center;
@@ -64,13 +53,13 @@ height:100vh;
     padding-top: 5px;
 }
 #wrap{word-wrap:break-word;}
+#age_city{margin-bottom: 5px;}
 label{
     display: block;
     height: 200px;
     margin-bottom: 0px;
     padding-bottom: 0px;
     text-align: center;
-    
     }
 label:hover{cursor: pointer;}
 #add_photo {
@@ -79,38 +68,27 @@ label:hover{cursor: pointer;}
     background: url("../img/camera.svg") no-repeat center;
     height: 0px;
     width: 0px;
-    
     margin-left: 0px;
-    
 }
 .photo:hover{
     background-color: #c8c8c8;
-    
     box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
     cursor: pointer;
-
 }
 ::placeholder {
-    
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     padding-top: 10px;
     padding-bottom: 0px;
-    
-    
   }
+  #calendarik{margin-right: 1px;}
 .znachok{
     display: inline-block;
     text-align: bottom;
-    
     margin-bottom: -3px;
     height: 18px;
     margin-right: -3px;
     margin-left: 3px;
-    
-  
-   
-
 }
 input{white-space:nowrap;
     font-size: 16px;
@@ -120,20 +98,18 @@ margin-bottom: 5px;
 font-family: 'Inter', sans-serif;
 padding-top: 3px;
 padding-left: 4px;
-
 width: 81%;
 margin-left: 2px;
-
 display: inline-block;
 white-space:nowrap;
 }
 .form{
-    border:1px solid red ;
+    /* border:1px solid red ; */
     padding-top:0;
-    padding-bottom: 0;
-    
+    padding-bottom: 0;  
 }
-h2{border:1px solid red ;
+h2{
+    /* border:1px solid red ; */
     width: 100%;
     text-align: center;
     margin-top: 0px;
@@ -142,15 +118,13 @@ h2{border:1px solid red ;
     background-color: rgb(255,130,67);
     color:white;
     text-shadow: black 0 0 2px;
+    padding:10px 0px;
 }
 p{margin:0px;
 padding: 0px;}
 
 .second{ 
-    border:1px solid red;
-    
-    
-    
+    /* border:1px solid red; */
     margin-left: 0px; 
     vertical-align: top;
     margin: 0px;
@@ -159,10 +133,7 @@ padding: 0px;}
     
 }
 .third{
-    border:1px solid red;
-    
-   
-    
+    /* border:1px solid red; */
     margin-left: 0px; 
     vertical-align: top;
     margin: 0px;
@@ -170,14 +141,11 @@ padding: 0px;}
     display: inline-block;
     
 }
-.fourth{border:1px solid red;
+.fourth{
+    /* border:1px solid red; */
     margin-left: 0px;
-    
-    
     padding-left: 0px;
-    
     display: inline-block;
-
 }
 
 .spec, #cal{
@@ -186,13 +154,14 @@ padding: 0px;}
     white-space:nowrap;
 }
 #cal{
-    margin-left: 1px;
+    margin-left: 0px;
 
 }
 .ed{
     width: 90%;
     display: inline-block;
 white-space:nowrap;
+clear: right;
 }
 textarea{width: 95%;
 height: 125px;
@@ -225,23 +194,16 @@ padding-left: 4px;}
 #years, #cval{
     width: 45.5%;
 }
-
-
-
 #krestS, #krestEdu, #krestL{border-radius: 8px 8px 8px 8px; 
     height: 17px;
     width: 17px;
     margin-left: 2px;
     margin-bottom: -1px;
-
 }
 #krestL:hover, #krestEdu:hover, #krestS:hover{
     box-shadow: 0px 0px 3px 3px rgba(0, 0, 255, .2);
     cursor: pointer;
 }
-
-
-
 .main{max-width:1200px;
     height: auto;}
 
@@ -252,7 +214,6 @@ padding-left: 4px;}
     grid-template-rows:  205px auto;
     grid-gap: 0px;
     grid-template-areas:
-      
     "first second third"
     "first fourth fourth"
     "first fifth fifth"
@@ -260,19 +221,15 @@ padding-left: 4px;}
 .first {
     grid-area: first;
   }
-  
   .second {
     grid-area: second;
   }
-  
   .third {
     grid-area: third;
   }
-  
   .fourth {
     grid-area: fourth;}
 .for_lang{grid-area: lang;}
-  
   .fifth{grid-area: fifth;}
   .slider {
     padding-bottom: 0px;
@@ -284,7 +241,6 @@ padding-left: 4px;}
     border-radius: 15px 15px 15px 15px;
     background: #d3d3d3;
     outline: none;
-    
     opacity: 1;
     -webkit-transition: .2s;
     transition: opacity .2s;
@@ -303,22 +259,17 @@ padding-left: 4px;}
       
         "first second"
         "first third"
-      "first fourth"
-      
-      "fifth fifth"
+        "first fourth" 
+        "fifth fifth"
     } 
-    h2{font-size: 18px;}
     h1{font-size: 21px;padding-top: 5px;}
     .ed, .spec, #cal, #years {width: 81%;}
-    
-    
     .main{margin-top: 5px;}
     #cval{width: 90%;}
     #kubok{padding-top: 2px;}
 }
     /* @media only screen and (max-width:700px){ 
-        #ed, .spec, #cal,#cval, #years {width: 89%;}
-    
+        #ed, .spec, #cal,#cval, #years {width: 89%;}    
 } */
 .znachok{   pointer-events: none; /*элемент не может стать объектом мыши*/
     user-select: none; /*запрет на перенос текста*/
@@ -360,9 +311,28 @@ padding-left: 4px;}
     }
     .contacts1{
         width: 90%;
-    }
-    
+    }   
     #shlyapa, #spisok, #trn, #chm,#kal{margin-right: 1px;}
     #chm{display: inline;
         white-space:break-spaces;
+        clear: left;
     }
+    .chemodan{width: 20px;
+        clear: none;
+        display:inline;
+    }
+    #label_submitButton{   
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 300px;
+        color: white;
+       height: auto;
+        padding: 16px 20px;
+        background-color: rgb(255,130,67);
+        border-radius: 15px 15px 15px 15px;
+        font-size: 18px;
+        text-shadow: black 0 0 2px;
+    }
+   
+    
+    .for_lang{padding-bottom: 10px;}
